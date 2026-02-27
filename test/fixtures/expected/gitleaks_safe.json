@@ -1,0 +1,5 @@
+{
+  "must_be_clean": [
+    "test/fixtures/gitleaks/safe/env_var_only_01.ts"
+  ]
+}

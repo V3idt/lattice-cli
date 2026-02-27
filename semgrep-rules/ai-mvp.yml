@@ -1,0 +1,48 @@
+rules:
+  - id: ts-node.sql-string-concat
+    message: Avoid SQL string concatenation with untrusted data; use parameterized queries.
+    severity: ERROR
+    languages:
+      - javascript
+      - typescript
+    metadata:
+      category: security
+      cwe: "CWE-89"
+      confidence: high
+      technology:
+        - nodejs
+    pattern-either:
+      - pattern: $DB.query("..." + $X + "...")
+      - pattern: $DB.query("..." + $X)
+      - pattern: $DB.query($X + "...")
+      - pattern: $DB.query(`...${$X}...`)
+
+  - id: ts-node.command-injection-req-data
+    message: Do not pass request-controlled values directly to exec.
+    severity: ERROR
+    languages:
+      - javascript
+      - typescript
+    metadata:
+      category: security
+      cwe: "CWE-78"
+      confidence: high
+      technology:
+        - nodejs
+    pattern-either:
+      - pattern: exec($REQ.query.$X)
+      - pattern: exec($REQ.body.$X)
+
+  - id: ts-node.eval-usage
+    message: Avoid eval; it enables code injection risks.
+    severity: ERROR
+    languages:
+      - javascript
+      - typescript
+    metadata:
+      category: security
+      cwe: "CWE-95"
+      confidence: high
+      technology:
+        - nodejs
+    pattern: eval($X)

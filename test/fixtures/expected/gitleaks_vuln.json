@@ -1,0 +1,5 @@
+{
+  "must_find_files": [
+    "test/fixtures/gitleaks/vuln/hardcoded_token_01.ts"
+  ]
+}

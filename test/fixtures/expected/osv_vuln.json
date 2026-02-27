@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "path": "test/fixtures/osv/vuln/package-lock-vuln.json",
+      "min_vulnerabilities": 1
+    }
+  ]
+}

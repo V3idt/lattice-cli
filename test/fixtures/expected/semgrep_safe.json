@@ -1,0 +1,7 @@
+{
+  "must_be_clean": [
+    "test/fixtures/semgrep/safe/sql_parameterized_01.ts",
+    "test/fixtures/semgrep/safe/validated_exec_01.ts",
+    "test/fixtures/semgrep/safe/no_eval_01.ts"
+  ]
+}

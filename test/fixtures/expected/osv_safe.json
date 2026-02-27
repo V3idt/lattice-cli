@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "path": "test/fixtures/osv/safe/package-lock-safe.json",
+      "max_vulnerabilities": 0
+    }
+  ]
+}

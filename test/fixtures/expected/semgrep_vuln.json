@@ -1,0 +1,22 @@
+{
+  "must_find": [
+    {
+      "path": "test/fixtures/semgrep/vuln/sql_injection_01.ts",
+      "rule_ids": [
+        "ts-node.sql-string-concat"
+      ]
+    },
+    {
+      "path": "test/fixtures/semgrep/vuln/command_injection_01.ts",
+      "rule_ids": [
+        "ts-node.command-injection-req-data"
+      ]
+    },
+    {
+      "path": "test/fixtures/semgrep/vuln/eval_usage_01.ts",
+      "rule_ids": [
+        "ts-node.eval-usage"
+      ]
+    }
+  ]
+}
