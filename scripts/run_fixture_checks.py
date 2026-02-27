@@ -82,7 +82,10 @@ def run_semgrep(strict_tools: bool) -> None:
         return
 
     config = ROOT / "semgrep-rules" / "ai-mvp.yml"
-    target = FIXTURES_DIR / "semgrep"
+    fixture_root = FIXTURES_DIR / "semgrep"
+    fixture_files = sorted(str(path) for path in fixture_root.rglob("*.ts"))
+    if not fixture_files:
+        raise CheckFailure("Semgrep fixtures are missing (*.ts files not found).")
 
     result = _run(
         [
@@ -91,7 +94,7 @@ def run_semgrep(strict_tools: bool) -> None:
             "--json",
             "--config",
             str(config),
-            str(target),
+            *fixture_files,
         ],
         allow_exit_codes=(0, 1),
     )
